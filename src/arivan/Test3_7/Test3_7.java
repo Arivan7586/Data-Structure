@@ -25,7 +25,6 @@ public class Test3_7 {
         m3.next = null;
 
         Solution solution = new Solution();
-
         //测试拼接方法
 //        Solution.ListNode prin = solution.addNode(l1,m1);
 //        solution.print(prin);
