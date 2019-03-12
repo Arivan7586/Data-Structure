@@ -1,4 +1,5 @@
 package arivan.Test3_10;
+import java.util.Arrays;
 
 public class Test3_10 {
     public static void main(String[] args) {
@@ -9,7 +10,8 @@ public class Test3_10 {
 //        Sort.chooseSort(arr);
 //        Sort.insertSort(arr);
 //        Sort.binarySort(arr);
-        Sort.shellSort(arr);
+//        Sort.shellSort(arr);
+        Sort.mergeSort(arr,0,9);
         printArray(arr);
     }
     public static void printArray(int[] arr) {
@@ -138,5 +140,44 @@ class Sort { //排序算法
         }
         long end = System.currentTimeMillis();
         System.out.println("shell排序用时：" + (end - start) + "毫秒");
+    }
+
+    public static void mergeSort(int[] arr, int low, int high) { //归并排序
+        if (low >= high) {
+            return;
+        }
+        int mid = low + (high- low)/2;
+        //拆出左边小数组
+        mergeSort(arr,low,mid);
+        //拆出右边小数组
+        mergeSort(arr,mid+1,high);
+        //重新组合两个小数组
+        merge(arr,low,mid,high);
+    }
+
+    public static void merge(int[] arr, int low, int mid, int high) {
+        int i = low;
+        int j = mid+1;
+        int k = 0;
+        int[] array = new int[high-low+1];
+        while (i <= mid && j <= high) {
+            if (arr[i] <= arr[j]) {
+                array[k++] = arr[i++];
+            }else {
+                array[k++] = arr[j++];
+            }
+        }
+        int start = i;
+        int end = mid;
+        if (j <= high) {
+            start = j;
+            end = high;
+        }
+        while (start <= end) {
+            array[k++] = arr[start++];
+        }
+        for (int l = 0; l <= high-low; l++) {
+            arr[low+l] = array[l];
+        }
     }
 }
