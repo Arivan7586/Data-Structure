@@ -4,6 +4,7 @@ public class Test3_17 {
     public static void main(String[] args) {
 
         int[] arr = new int[]{6,2,7,0,9,4,1,5,3,8};
+        printArray(arr);
 //        Sort.bubbleSort(arr);
 //        Sort.chooseSort(arr);
 //        Sort.insertSort(arr);
@@ -141,13 +142,17 @@ class Sort {
         mergeInternal(arr, 0, n-1);
     }
     public static void mergeInternal(int[] arr, int l, int r) {
-        if (l >= r) {
+        if (r - l <= 15) {
+            //调用直接插入排序
+            insertSort(arr);
             return;
         }
         int mid = l + (r - l)/2;
         mergeInternal(arr,l,mid);
         mergeInternal(arr,mid+1,r);
-        merge(arr,l,mid,r);
+        if (arr[mid] >= arr[mid+1]) {
+            merge(arr,l,mid,r);
+        }
     }
     public static void merge(int[] arr, int l, int mid, int r) {
         int[] array = new int[r-l+1];
@@ -184,7 +189,9 @@ class Sort {
         quickSortInternal(arr,0,n-1);
     }
     public static void quickSortInternal(int[] arr, int l, int r) {
-        if (l >= r) {
+        if (r - l <= 15) {
+            //调用直接插入排序
+            insertSort(arr);
             return;
         }
         int value = findValue2(arr,l,r);
