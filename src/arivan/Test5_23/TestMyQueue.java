@@ -3,7 +3,6 @@ package arivan.Test5_23;
 public class TestMyQueue {
 
     public static void main(String[] args) {
-
         MyQueue<Integer> myQueue = new ArrayQueue<>(5);
         myQueue.enQueue(1);
         myQueue.enQueue(2);

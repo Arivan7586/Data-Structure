@@ -2,7 +2,7 @@ package arivan.Test5_23;
 
 /**
  * 基于数组实现的队列
- * @param <T>
+ * @param <T> 队列中的元素
  */
 public class ArrayQueue<T> implements MyQueue<T> {
 

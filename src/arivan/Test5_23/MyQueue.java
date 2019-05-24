@@ -1,5 +1,9 @@
 package arivan.Test5_23;
 
+/**
+ * 队列接口
+ * @param <E>
+ */
 public interface MyQueue<E> {
 
     /**

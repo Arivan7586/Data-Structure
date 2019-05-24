@@ -5,7 +5,7 @@ import arivan.Test5_20.MyStack;
 
 /**
  * 基于链表实现的队列
- * @param <E>
+ * @param <E> 队列中的元素
  */
 public class LinkedQueue<E> implements MyQueue<E> {
 
