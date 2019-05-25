@@ -11,6 +11,7 @@ public class Test {
 //        InsertSort.sort(arr);
 //        InsertSort.binarySort(arr);
 //        ShellSort.sort(arr);
+
         MergeSort.sort(arr);
         for (int i : arr) {
             System.out.print(i + " ");
