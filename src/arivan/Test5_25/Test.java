@@ -1,4 +1,4 @@
-package arivan;
+package arivan.Test5_25;
 
 public class Test {
 
