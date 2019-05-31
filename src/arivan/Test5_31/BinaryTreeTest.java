@@ -1,15 +1,16 @@
-package arivan.Test5_31;
-
-import java.util.LinkedList;
+﻿package Test5_31;
 import java.util.List;
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class BinaryTreeTest {
 
     public static void main(String[] args) {
 
-        Solution solution = new Solution();
+
+        Solution3 solution3 = new Solution3();
     }
+
 }
 
 //二叉树的前序遍历
