@@ -127,7 +127,6 @@ class Solution2 {
     }
 }
 
-
 //根据二叉树创建字符串
 class Solution3 {
     private class TreeNode {
