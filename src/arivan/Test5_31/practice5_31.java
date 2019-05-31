@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.Stack;
 
 public class practice5_31 {
+
     public static void main(String[] args) {
-        Solution solution = new Solution();
+
+
     }
 }
 
@@ -22,35 +24,7 @@ class Solution {
         }
     }
 
-    /**
-     * 递归遍历
-     *
-     * @param root
-     * @return
-     */
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> list = new LinkedList<>();
-        run(root, list);
-        return list;
-    }
-
-    private void run(TreeNode root, List<Integer> list) {
-        if (root == null) {
-            return;
-        } else {
-            list.add(root.val);
-            run(root.left, list);
-            run(root.right, list);
-        }
-    }
-
-    /**
-     * 非递归遍历
-     *
-     * @param root
-     * @return
-     */
-    public List<Integer> preorderTraversal1(TreeNode root) {
         List<Integer> list = new LinkedList<>();
         if (root == null) {
             return list;
@@ -72,7 +46,7 @@ class Solution {
     }
 }
 
-//二叉树中序遍历
+//二叉树的中序遍历
 class Solution1 {
     private class TreeNode {
         int val;
@@ -83,25 +57,23 @@ class Solution1 {
             val = x;
         }
     }
-
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> list = new LinkedList<>();
-        run(root, list);
+        run(root,list);
         return list;
     }
-
     private void run(TreeNode node, List<Integer> list) {
         if (node == null) {
             return;
         } else {
-            run(node.left, list);
+            run(node.left,list);
             list.add(node.val);
-            run(node.right, list);
+            run(node.right,list);
         }
     }
 }
 
-//二叉树的后序列遍历
+//二叉树的后序遍历
 class Solution2 {
     private class TreeNode {
         int val;
@@ -138,24 +110,14 @@ class Solution3 {
             val = x;
         }
     }
-
-    /**
-     * 你需要采用前序遍历的方式，将一个二叉树转换成一个由括号和整数组成的字符串。
-     *
-     * 空节点则用一对空括号 "()" 表示。而且你需要省略所有不影响字符串与原始二叉树
-     * 之间的一对一映射关系的空括号对。
-     * @param t
-     * @return
-     */
     public String tree2str(TreeNode t) {
         StringBuilder str = new StringBuilder();
         if (t == null) {
             return str.toString();
         }
-        run(t, str);
+        run(t,str);
         return str.toString();
     }
-
     private void run(TreeNode node, StringBuilder str) {
         if (node == null) {
             return;
@@ -163,7 +125,7 @@ class Solution3 {
         str.append(node.val);
         if (node.left != null) {
             str.append("(");
-            run(node.left, str);
+            run(node.left,str);
             str.append(")");
         } else {
             if (node.right != null) {
@@ -172,7 +134,7 @@ class Solution3 {
         }
         if (node.right != null) {
             str.append("(");
-            run(node.right, str);
+            run(node.right,str);
             str.append(")");
         }
     }
