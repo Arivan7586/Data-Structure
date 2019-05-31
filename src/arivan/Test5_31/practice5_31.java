@@ -8,7 +8,8 @@ public class practice5_31 {
 
     public static void main(String[] args) {
 
-
+        Solution solution = new Solution();
+        Solution1 solution1 = new Solution1();
     }
 }
 
