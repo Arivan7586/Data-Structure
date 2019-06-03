@@ -57,4 +57,23 @@ public interface BinaryTree<E> {
      * @return
      */
     boolean isEmpty();
+
+    /**
+     * 删除最小值节点
+     * @return 返回被删除的值
+     */
+    E removeMin();
+
+    /**
+     * 删除最大值节点
+     * @return 返回被删除的值
+     */
+    E removeMax();
+
+    /**
+     * 查找当前二叉树中是否存在给定值的节点
+     * @param e 给定值
+     * @return 存在返回true，否则返回false
+     */
+    boolean containsNode(E e);
 }
